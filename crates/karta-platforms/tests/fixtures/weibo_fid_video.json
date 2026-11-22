@@ -1,0 +1,16 @@
+{
+  "data": {
+    "Component_Play_Playinfo": {
+      "urls": {
+        "mp4_sd_url": "https://f.video.weibocdn.com/test_fid_sd.mp4",
+        "mp4_hd_url": "https://f.video.weibocdn.com/test_fid_hd.mp4"
+      }
+    },
+    "Component_Reward": {
+      "user": {
+        "screen_name": "FID视频作者",
+        "profile_image_url": "https://tvax4.sinaimg.cn/crop/fid_avatar.jpg"
+      }
+    }
+  }
+}

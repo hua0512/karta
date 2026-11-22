@@ -1,0 +1,41 @@
+{
+  "code": 0,
+  "message": "0",
+  "data": {
+    "bvid": "BV1xx411c7mD",
+    "aid": 170001,
+    "title": "【测试】这是一个测试视频标题",
+    "desc": "视频描述信息",
+    "pic": "https://i0.hdslb.com/bfs/archive/test_cover.jpg",
+    "pubdate": 1704067200,
+    "duration": 180,
+    "owner": {
+      "mid": 12345678,
+      "name": "测试UP主",
+      "face": "https://i1.hdslb.com/bfs/face/test_avatar.jpg"
+    },
+    "stat": {
+      "view": 1000000,
+      "danmaku": 5000,
+      "reply": 2000,
+      "favorite": 30000,
+      "coin": 15000,
+      "share": 8000,
+      "like": 50000
+    },
+    "pages": [
+      {
+        "cid": 99999001,
+        "page": 1,
+        "part": "P1 第一集",
+        "duration": 90
+      },
+      {
+        "cid": 99999002,
+        "page": 2,
+        "part": "P2 第二集",
+        "duration": 90
+      }
+    ]
+  }
+}

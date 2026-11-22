@@ -1,0 +1,14 @@
+{
+  "code": "100000",
+  "msg": "success",
+  "data": {
+    "url": "https://weibo.com/ttarticle/p/show?id=2309404962180771742222",
+    "title": "测试微博文章标题",
+    "content": "<div class=\"article\"><p>这是微博文章正文内容。</p><p>第二段落内容。</p><img src=\"https://wx3.sinaimg.cn/large/article_img1.jpg\" /></div>",
+    "userinfo": {
+      "screen_name": "文章作者",
+      "profile_image_url": "https://tvax4.sinaimg.cn/crop/article_author.jpg"
+    },
+    "create_at_unix": 1704067200
+  }
+}

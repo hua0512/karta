@@ -1,0 +1,12 @@
+/target
+node_modules/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+*.swp
+*.swo
+*~
+.env
+config.json
+kovi.conf.toml
+.claude/
+/crates/karta-core/cache/

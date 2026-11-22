@@ -1,0 +1,29 @@
+{
+  "code": 0,
+  "message": "success",
+  "result": {
+    "title": "【测试】番剧标题",
+    "cover": "https://i0.hdslb.com/bfs/bangumi/season_cover.jpg",
+    "evaluate": "番剧简介",
+    "episodes": [
+      {
+        "id": 199611,
+        "bvid": "BV1ab411c7m1",
+        "cid": 88880001,
+        "share_copy": "第1话 开始",
+        "cover": "https://i0.hdslb.com/bfs/bangumi/ep_1.jpg",
+        "duration": 90000,
+        "pub_time": 1704067200
+      },
+      {
+        "id": 199612,
+        "bvid": "BV1ab411c7m2",
+        "cid": 88880002,
+        "share_copy": "第2话 继续",
+        "cover": "https://i0.hdslb.com/bfs/bangumi/ep_2.jpg",
+        "duration": 90000,
+        "pub_time": 1704672000
+      }
+    ]
+  }
+}

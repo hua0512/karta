@@ -1,0 +1,45 @@
+name: Set up build dependencies
+description: Reuse runner tools and install only missing native build dependencies
+inputs:
+  ffmpeg:
+    description: Also require ffmpeg and ffprobe for real-tool tests
+    default: "false"
+runs:
+  using: composite
+  steps:
+    - name: Check native build dependencies
+      shell: bash
+      env:
+        REQUIRE_FFMPEG: ${{ inputs.ffmpeg }}
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        printf '%s\n' \
+          'Acquire::Retries "2";' \
+          'Acquire::http::Timeout "30";' \
+          'Acquire::https::Timeout "30";' \
+          | sudo tee /etc/apt/apt.conf.d/80-karta-ci > /dev/null
+
+        packages=()
+        command -v cmake > /dev/null || packages+=(cmake)
+        command -v perl > /dev/null || packages+=(perl)
+        # Bindgen needs the shared library, not the libclang-dev metapackage.
+        if [[ ! $(ldconfig -p) =~ libclang(-[0-9]+)?\.so ]]; then
+          packages+=(libclang-dev)
+        fi
+        if [[ "$REQUIRE_FFMPEG" == true ]]; then
+          if ! command -v ffmpeg > /dev/null || ! command -v ffprobe > /dev/null; then
+            packages+=(ffmpeg)
+          fi
+        fi
+        if (( ${#packages[@]} )); then
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends "${packages[@]}"
+        fi
+
+        cmake --version
+        perl -e 'printf "Perl %vd\n", $^V'
+        ldconfig -p | grep -E 'libclang(-[0-9]+)?\.so'
+        if [[ "$REQUIRE_FFMPEG" == true ]]; then
+          ffmpeg -version
+          ffprobe -version
+        fi

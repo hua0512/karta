@@ -1,0 +1,13 @@
+{
+  "loaderData": {
+    "comic_(id)/page": {
+      "req": { "webID": "w", "uuid": "u" },
+      "isSuccess": true,
+      "title": "测试漫剧",
+      "book_id": "7111943588446997534",
+      "next_vid": "7111943588446997600",
+      "can_read_episode_cnt": 3,
+      "content": "{\"chapter_info_list\":[{\"item_id\":\"7111943588446997600\",\"pic_list\":[{\"pic_url\":\"https://p1.example.com/comic/page1.png~tplv-x.image\",\"low_pic_url\":\"https://p1.example.com/comic/page1_low.png\",\"width\":1080,\"height\":1920},{\"pic_url\":\"https://p1.example.com/comic/page2.png~tplv-x.image\",\"low_pic_url\":\"https://p1.example.com/comic/page2_low.png\",\"width\":1080,\"height\":1920},{\"pic_url\":\"\",\"low_pic_url\":\"https://p1.example.com/comic/page3_low.png\",\"width\":0,\"height\":0}]},{\"item_id\":\"7111943588446997601\",\"pic_list\":[]}]}"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "status": "ok",
+  "msg": "",
+  "result": {
+    "link": {
+      "linkid": 170000001,
+      "title": "新版本攻略合集",
+      "description": "摘要不会被使用",
+      "thumb": "https://imgheybox.max-c.com/web/bbs/2026/01/02/cover.png",
+      "video_thumb": "",
+      "has_video": 0,
+      "user": {
+        "username": "攻略组",
+        "userid": "100001",
+        "avatar": "https://avatar.max-c.com/guide.png"
+      },
+      "hashtags": [
+        {
+          "name": "攻略"
+        }
+      ],
+      "text": "[{\"type\": \"html\", \"text\": \"<p>开头一段</p><img class=\\\"lazyload\\\" data-original=\\\"https://imgheybox1.max-c.com/web/bbs/2026/01/02/cover.png?imageMogr2/format/webp\\\" src=\\\"data:image/gif;base64,R0lGOD\\\" /><p>中间一段</p><img data-original=\\\"https://imgheybox.max-c.com/web/bbs/2026/01/02/detail.jpg\\\" alt=\\\"detail\\\"><iframe class=\\\"video\\\" src=\\\"//player.bilibili.com/player.html?bvid=BV1xx411c7mD\\\"></iframe><p>结尾一段</p>\"}]",
+      "create_at": 1704067200
+    }
+  }
+}

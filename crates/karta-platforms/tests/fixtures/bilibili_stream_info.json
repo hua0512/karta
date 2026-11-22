@@ -1,0 +1,37 @@
+{
+  "code": 0,
+  "message": "0",
+  "data": {
+    "dash": {
+      "video": [
+        {
+          "id": 80,
+          "baseUrl": "https://upos-sz-mirrorcos.bilivideo.com/video_1080p.m4s",
+          "bandwidth": 3000000,
+          "codecs": "avc1.640032",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "id": 64,
+          "baseUrl": "https://upos-sz-mirrorcos.bilivideo.com/video_720p.m4s",
+          "bandwidth": 1500000,
+          "codecs": "avc1.64001F",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "audio": [
+        {
+          "id": 30280,
+          "baseUrl": "https://upos-sz-mirrorcos.bilivideo.com/audio_192k.m4s",
+          "bandwidth": 192000,
+          "codecs": "mp4a.40.2",
+          "width": null,
+          "height": null
+        }
+      ]
+    },
+    "durl": null
+  }
+}

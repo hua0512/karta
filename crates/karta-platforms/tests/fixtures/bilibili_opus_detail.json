@@ -1,0 +1,57 @@
+{
+  "code": 0,
+  "message": "0",
+  "data": {
+    "item": {
+      "basic": {
+        "title": "【测试】图文专栏标题"
+      },
+      "modules": [
+        {
+          "module_type": "MODULE_TYPE_AUTHOR",
+          "module_author": {
+            "name": "测试专栏作者",
+            "face": "https://i1.hdslb.com/bfs/face/opus_author.jpg",
+            "mid": 23456789,
+            "pub_ts": "1704153600"
+          }
+        },
+        {
+          "module_type": "MODULE_TYPE_CONTENT",
+          "module_content": {
+            "paragraphs": [
+              {
+                "text": {
+                  "nodes": [
+                    { "type": "TEXT_NODE_TYPE_WORD", "word": { "words": "第一段正文" } }
+                  ]
+                }
+              },
+              {
+                "pic": {
+                  "pics": [
+                    { "url": "https://i0.hdslb.com/bfs/new_dyn/opus_1.jpg", "width": 1280, "height": 720 }
+                  ]
+                }
+              },
+              {
+                "text": {
+                  "nodes": [
+                    { "type": "TEXT_NODE_TYPE_WORD", "word": { "words": "图片说明", "color": "#999999" } }
+                  ]
+                }
+              },
+              {
+                "text": {
+                  "nodes": [
+                    { "type": "TEXT_NODE_TYPE_WORD", "word": { "words": "第二段正文" } }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

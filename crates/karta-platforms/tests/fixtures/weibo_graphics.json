@@ -1,0 +1,30 @@
+{
+  "ok": 1,
+  "data": {
+    "text": "分享几张美食照片~",
+    "created_at": "Wed Nov 15 12:00:00 +0800 2024",
+    "user": {
+      "screen_name": "美食达人",
+      "profile_image_url": "https://tvax1.sinaimg.cn/crop/food.jpg"
+    },
+    "page_info": null,
+    "pics": [
+      {
+        "large": {
+          "url": "https://wx1.sinaimg.cn/large/food1.jpg"
+        }
+      },
+      {
+        "large": {
+          "url": "https://wx1.sinaimg.cn/large/food2.jpg"
+        }
+      },
+      {
+        "large": {
+          "url": "https://wx1.sinaimg.cn/large/food3.jpg"
+        }
+      }
+    ],
+    "retweeted_status": null
+  }
+}

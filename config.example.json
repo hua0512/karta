@@ -1,0 +1,62 @@
+{
+  "bili_cookie": null,
+  "bili_cookie_auto_refresh": true,
+  "ytb_cookie": null,
+  "xhs_cookie": null,
+  "twitter_cookie": null,
+  "weibo_cookie": null,
+  "xhh_cookie": null,
+  "douyin_cookie": null,
+  "douyin_mobile": null,
+  "instagram_cookie": null,
+  "hongguo_api_auth": null,
+  "wechat_channel_cookie": null,
+
+  "proxy": null,
+  "max_size": 90,
+  "duration_maximum": 480,
+
+  "render_type": "text",
+  "image_header_style": "blur_background",
+  "image_theme_mode": "auto",
+  "disabled_platforms": [],
+  "cache_size": 50,
+  "download_media": true,
+  "download_concurrency": 4,
+
+  "ffmpeg_path": null,
+
+  "bili_video_quality": "1080p",
+  "bili_video_codecs": ["avc", "av1", "hevc"],
+  "bili_cdn_mode": "auto",
+  "bili_smart_resolution": false,
+  "bili_live_record_seconds": 0,
+
+  "ytdlp_path": null,
+  "ytdlp_cookies_file": null,
+
+  "custom_font": null,
+  "emoji_style": "twemoji",
+  "emoji_cdn_url": null,
+  "emoji_enabled": true,
+
+  "append_url": false,
+  "use_base64": false,
+  "need_upload": false,
+
+  "access_control": {
+    "enabled": false,
+    "mode": "blacklist",
+    "users": [],
+    "groups": []
+  },
+  "group_blacklist_enabled": true,
+
+  "forward_contents": true,
+  "reaction_enabled": true,
+  "forward_text_threshold": 300,
+  "forward_media_threshold": 4,
+
+  "parse_timeout": 60,
+  "max_concurrent_parses": 8
+}

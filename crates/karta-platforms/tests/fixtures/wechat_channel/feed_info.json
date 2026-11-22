@@ -1,0 +1,28 @@
+{
+  "errCode": 0,
+  "errMsg": "",
+  "data": {
+    "feedInfo": {
+      "videoUrl": "https://finder.video.qq.com/251/20302/stodownload?encfilekey=ENC123&token=CDNTOKEN&bizid=1023",
+      "h264VideoInfo": {
+        "videoUrl": "https://finder.video.qq.com/251/20304/stodownload?encfilekey=H264KEY&token=CDNTOKEN2"
+      },
+      "coverUrl": "https://finder.video.qq.com/cover.jpg",
+      "description": "这是一个测试视频号视频",
+      "createtime": 1700000000,
+      "mediaType": 4,
+      "likeCountFmt": "1.2万",
+      "favCountFmt": "8656",
+      "forwardCountFmt": "3456",
+      "commentCountFmt": "999"
+    },
+    "authorInfo": {
+      "nickname": "测试视频号作者",
+      "headImgUrl": "https://wx.qlogo.cn/finderhead/head.jpg",
+      "authIconUrl": ""
+    },
+    "sceneInfo": {
+      "expiredTime": 1700086400
+    }
+  }
+}

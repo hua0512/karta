@@ -1,0 +1,66 @@
+[package]
+name = "karta-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "A framework-agnostic library for parsing social media URLs and rendering rich media content"
+
+[features]
+# Emoji rendering is on by default so the bot build honors the
+# emoji_enabled/emoji_style/emoji_cdn_url config keys out of the box
+# (downstream crates depend on karta-core with default features).
+default = ["emoji"]
+# Enable yt-dlp integration for video/audio downloads
+ytdlp = []
+# Enable emoji rendering with CDN support
+emoji = ["dep:emojis"]
+
+[dependencies]
+# Async runtime
+tokio = { workspace = true, features = ["full"] }
+async-trait.workspace = true
+futures.workspace = true
+
+# HTTP client (wreq with Chrome TLS impersonation)
+wreq = { workspace = true, features = ["json", "stream", "cookies", "gzip", "brotli", "query"] }
+wreq-util.workspace = true
+
+# Serialization
+serde.workspace = true
+serde_json.workspace = true
+
+# Pattern matching
+regex.workspace = true
+
+# Image processing
+image.workspace = true
+imageproc.workspace = true
+fast_image_resize = { version = "6.1", features = ["image"] }
+# Bundled decoder; default SSE2/NEON paths keep release binaries portable.
+# Do not enable the crate's AVX2 feature: it sets global C compiler flags.
+libwebp-sys = "0.14.4"
+swash.workspace = true
+
+# Emoji support (optional)
+emojis = { workspace = true, optional = true }
+
+# Small-vec for capture groups
+smallvec.workspace = true
+
+# Utilities
+chrono.workspace = true
+thiserror.workspace = true
+sha2.workspace = true
+tracing.workspace = true
+parking_lot.workspace = true
+base64.workspace = true
+url.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
+test-harness.workspace = true
+# Paused clock for timeout tests (`#[tokio::test(start_paused = true)]`).
+tokio = { workspace = true, features = ["test-util"] }
+
+[lints]
+workspace = true

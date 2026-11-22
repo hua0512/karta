@@ -1,0 +1,50 @@
+{
+  "status": "ok",
+  "result": {
+    "image": "https://cdn.max-c.com/game_cover.jpg?imageView2/0/w/1080",
+    "name": "测试游戏",
+    "name_en": "Test Game",
+    "game_type": "pc",
+    "score": 8.5,
+    "comment_stats": {
+      "score_comment": 12345
+    },
+    "price": {
+      "current": 98,
+      "initial": 198,
+      "discount": 50,
+      "lowest_price": 49,
+      "lowest_discount": 75,
+      "deadline_date": "2024-02-01"
+    },
+    "heybox_price": {
+      "cost_coin": 5000,
+      "original_coin": 10000,
+      "discount": 50
+    },
+    "menu_v2": [
+      {"type": "release_date", "value": "2023-12-01"},
+      {"type": "developer", "value": "测试工作室"},
+      {"type": "publisher", "value": "测试发行商"}
+    ],
+    "platforms": ["Windows", "macOS"],
+    "about_the_game": "这是一款测试游戏的详细介绍，包含丰富的游戏内容和精彩的故事情节。",
+    "screenshots": [
+      {"type": "image", "url": "https://cdn.max-c.com/screenshot1.jpg"},
+      {"type": "image", "url": "https://cdn.max-c.com/screenshot2.jpg"}
+    ],
+    "common_tags": [
+      {"desc": "动作", "type": "genre"},
+      {"desc": "冒险", "type": "genre"}
+    ],
+    "hot_tags": [
+      {"desc": "好评如潮"}
+    ],
+    "multidimensional_score_radar": {
+      "dimension_list": [
+        {"dimension_name": "画面", "score": 9.0},
+        {"dimension_name": "玩法", "score": 8.5}
+      ]
+    }
+  }
+}

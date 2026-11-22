@@ -1,0 +1,42 @@
+{
+  "code": 0,
+  "message": "0",
+  "data": {
+    "item": {
+      "id_str": "998440765151510535",
+      "type": "DYNAMIC_TYPE_DRAW",
+      "modules": {
+        "module_author": {
+          "name": "测试动态作者",
+          "mid": 12345678,
+          "face": "https://i1.hdslb.com/bfs/face/test_avatar.jpg",
+          "pub_ts": 1704067200
+        },
+        "module_dynamic": {
+          "desc": {
+            "text": "这是一条测试动态文字内容"
+          },
+          "major": {
+            "type": "MAJOR_TYPE_DRAW",
+            "archive": null,
+            "draw": {
+              "items": [
+                {
+                  "src": "https://i0.hdslb.com/bfs/new_dyn/test1.jpg",
+                  "width": 1080,
+                  "height": 1920
+                },
+                {
+                  "src": "https://i0.hdslb.com/bfs/new_dyn/test2.jpg",
+                  "width": 1920,
+                  "height": 1080
+                }
+              ]
+            }
+          }
+        }
+      },
+      "orig": null
+    }
+  }
+}

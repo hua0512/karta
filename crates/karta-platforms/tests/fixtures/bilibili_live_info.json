@@ -1,0 +1,16 @@
+{
+  "code": 0,
+  "message": "0",
+  "data": {
+    "room_id": 23585383,
+    "title": "【测试】直播间标题",
+    "description": "直播间描述",
+    "live_status": 1,
+    "user_cover": "https://i0.hdslb.com/bfs/live/test_cover.jpg",
+    "keyframe": "https://i0.hdslb.com/bfs/live/test_keyframe.jpg",
+    "uid": 12345678,
+    "area_name": "虚拟主播",
+    "parent_area_name": "虚拟主播",
+    "tags": "虚拟,直播"
+  }
+}

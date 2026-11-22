@@ -1,0 +1,698 @@
+/**
+ * Karta Docs Theme — Raycast-inspired Obsidian + Warm Sunset Coral/Amber
+ * Matches docs/public/hero.svg and Karta's warm-paper native card renderer.
+ */
+
+:root {
+  /* Typography: crisp Latin + CJK stack */
+  --vp-font-family-base:
+    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+  --vp-font-family-mono:
+    'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, 'Liberation Mono', monospace;
+
+  /* Warm Sunset Brand Accents */
+  --vp-c-brand-1: #e14228;
+  --vp-c-brand-2: #f05232;
+  --vp-c-brand-3: #f97316;
+  --vp-c-brand-soft: rgba(249, 115, 22, 0.13);
+
+  /* Light Mode: Warm Paper Surfaces echoing Karta's rgb(254, 250, 245) */
+  --vp-c-bg: #fffdfa;
+  --vp-c-bg-alt: #faf5f0;
+  --vp-c-bg-elv: #fffdfa;
+  --vp-c-bg-soft: #f6efe8;
+
+  --vp-c-border: rgba(120, 88, 66, 0.16);
+  --vp-c-divider: rgba(120, 88, 66, 0.12);
+  --vp-c-gutter: rgba(120, 88, 66, 0.1);
+
+  --vp-c-text-1: #1c1917;
+  --vp-c-text-2: #57534e;
+  --vp-c-text-3: #78716c;
+
+  /* Karta Component Tokens (Light) */
+  --karta-surface: #ffffff;
+  --karta-surface-soft: #faf5f0;
+  --karta-surface-muted: #f4ece3;
+  --karta-border: rgba(120, 88, 66, 0.15);
+  --karta-border-strong: rgba(120, 88, 66, 0.24);
+  --karta-border-hover: rgba(249, 115, 22, 0.45);
+  --karta-glow: rgba(249, 115, 22, 0.16);
+  --karta-shadow-sm: 0 2px 10px rgba(45, 28, 16, 0.05);
+  --karta-shadow-md: 0 12px 32px rgba(45, 28, 16, 0.08), 0 2px 6px rgba(45, 28, 16, 0.04);
+  --karta-shadow-lg: 0 22px 54px rgba(45, 28, 16, 0.11), 0 4px 12px rgba(45, 28, 16, 0.05);
+  --karta-gradient: linear-gradient(125deg, #ff5e3a 0%, #f43f5e 52%, #f97316 78%, #fbbf24 100%);
+  --karta-gradient-subtle: linear-gradient(
+    135deg,
+    rgba(255, 94, 58, 0.08) 0%,
+    rgba(249, 115, 22, 0.05) 55%,
+    rgba(251, 191, 36, 0.08) 100%
+  );
+  --karta-accent-1: #ff5e3a;
+  --karta-accent-2: #f43f5e;
+  --karta-accent-3: #f97316;
+  --karta-accent-4: #fbbf24;
+  --karta-code-bg: #16161b;
+  --karta-code-border: rgba(255, 255, 255, 0.1);
+  --karta-nav-bg: rgba(255, 253, 250, 0.78);
+  --karta-hero-grid: rgba(24, 24, 27, 0.045);
+  --karta-hero-dot: rgba(24, 24, 27, 0.07);
+  --karta-cta-bg: linear-gradient(180deg, #ffffff 0%, #faf3eb 100%);
+  --karta-cta-border: rgba(120, 88, 66, 0.22);
+  --karta-cta-inset: rgba(255, 255, 255, 0.85);
+  --karta-cta-glow: radial-gradient(
+    ellipse at center,
+    rgba(255, 94, 58, 0.16) 0%,
+    rgba(249, 115, 22, 0.09) 42%,
+    transparent 74%
+  );
+  --karta-bento-bg: #ffffff;
+  --karta-bento-inset: rgba(255, 255, 255, 0.72);
+  --karta-amber-badge-color: #d97706;
+  --karta-demo-shell-bg: #ffffff;
+
+  /* Home Hero */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(
+    120deg,
+    #ff5e3a 15%,
+    #f43f5e 52%,
+    #f97316 80%,
+    #fbbf24 100%
+  );
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    rgba(255, 94, 58, 0.48) 25%,
+    rgba(244, 63, 94, 0.36) 55%,
+    rgba(251, 191, 36, 0.45) 85%
+  );
+  --vp-home-hero-image-filter: blur(46px);
+
+  /* Buttons */
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-text: #ffffff;
+  --vp-button-brand-bg: #f05232;
+  --vp-button-brand-hover-border: transparent;
+  --vp-button-brand-hover-text: #ffffff;
+  --vp-button-brand-hover-bg: #e14228;
+  --vp-button-brand-active-bg: #c8371f;
+}
+
+.dark {
+  --vp-c-brand-1: #fb923c;
+  --vp-c-brand-2: #f97316;
+  --vp-c-brand-3: #ea580c;
+  --vp-c-brand-soft: rgba(251, 146, 60, 0.15);
+
+  /* Dark Mode: Rich Obsidian Surfaces */
+  --vp-c-bg: #0c0c0f;
+  --vp-c-bg-alt: #111116;
+  --vp-c-bg-elv: #16161c;
+  --vp-c-bg-soft: #18181e;
+
+  --vp-c-border: rgba(255, 255, 255, 0.08);
+  --vp-c-divider: rgba(255, 255, 255, 0.07);
+  --vp-c-gutter: rgba(0, 0, 0, 0.45);
+
+  --vp-c-text-1: #f5f5f7;
+  --vp-c-text-2: #a8a8b3;
+  --vp-c-text-3: #71717d;
+
+  /* Karta Component Tokens (Dark) */
+  --karta-surface: #141418;
+  --karta-surface-soft: #18181c;
+  --karta-surface-muted: #1f1f26;
+  --karta-border: rgba(255, 255, 255, 0.08);
+  --karta-border-strong: rgba(255, 255, 255, 0.14);
+  --karta-border-hover: rgba(251, 146, 60, 0.38);
+  --karta-glow: rgba(251, 146, 60, 0.22);
+  --karta-shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.28);
+  --karta-shadow-md: 0 14px 36px rgba(0, 0, 0, 0.42), 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+  --karta-shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.56), 0 1px 0 rgba(255, 255, 255, 0.05) inset;
+  --karta-gradient-subtle: linear-gradient(
+    135deg,
+    rgba(255, 94, 58, 0.12) 0%,
+    rgba(244, 63, 94, 0.08) 50%,
+    rgba(251, 191, 36, 0.08) 100%
+  );
+  --karta-code-bg: #0f0f13;
+  --karta-code-border: rgba(255, 255, 255, 0.09);
+  --karta-nav-bg: rgba(12, 12, 15, 0.76);
+  --karta-hero-grid: rgba(255, 255, 255, 0.045);
+  --karta-hero-dot: rgba(255, 255, 255, 0.068);
+  --karta-cta-bg: linear-gradient(180deg, rgba(24, 23, 30, 0.94) 0%, rgba(14, 14, 19, 0.98) 100%);
+  --karta-cta-border: rgba(255, 255, 255, 0.11);
+  --karta-cta-inset: rgba(255, 255, 255, 0.08);
+  --karta-cta-glow: radial-gradient(
+    ellipse at center,
+    rgba(255, 94, 58, 0.22) 0%,
+    rgba(244, 63, 94, 0.1) 42%,
+    transparent 74%
+  );
+  --karta-bento-bg: linear-gradient(180deg, rgba(24, 24, 31, 0.9) 0%, rgba(16, 16, 21, 0.96) 100%);
+  --karta-bento-inset: rgba(255, 255, 255, 0.065);
+  --karta-amber-badge-color: #fbbf24;
+  --karta-demo-shell-bg: linear-gradient(180deg, rgba(22, 22, 28, 0.94) 0%, rgba(14, 14, 18, 0.98) 100%);
+
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    rgba(255, 94, 58, 0.52) 25%,
+    rgba(244, 63, 94, 0.4) 55%,
+    rgba(251, 191, 36, 0.36) 85%
+  );
+}
+
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(58px);
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(72px);
+  }
+}
+
+/* ============================================================================
+ * Frosted Sticky Navbar
+ * ========================================================================== */
+
+.VPNavBar:not(.home.top) {
+  background-color: var(--karta-nav-bg) !important;
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+}
+
+.VPNavBar .content-body {
+  background: transparent !important;
+}
+
+.VPNavBarTitle .logo {
+  transition: transform 0.25s ease;
+}
+
+.VPNavBarTitle:hover .logo {
+  transform: rotate(-4deg) scale(1.06);
+}
+
+/* ============================================================================
+ * Home Hero Polish + Floating Logo Animation
+ * ========================================================================== */
+
+@keyframes karta-float {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-9px) rotate(1.1deg);
+  }
+}
+
+.VPHero {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Radial-faded architectural dot/grid backdrop */
+.VPHero::before {
+  content: '';
+  position: absolute;
+  top: calc(var(--vp-nav-height, 64px) * -1);
+  left: 0;
+  right: 0;
+  bottom: -64px;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, var(--karta-hero-dot) 1.1px, transparent 1.1px),
+    linear-gradient(to right, var(--karta-hero-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--karta-hero-grid) 1px, transparent 1px);
+  background-size: 32px 32px, 64px 64px, 64px 64px;
+  background-position: center top;
+  -webkit-mask-image: radial-gradient(
+    ellipse 78% 70% at 50% 34%,
+    #000 18%,
+    rgba(0, 0, 0, 0.45) 55%,
+    transparent 92%
+  );
+  mask-image: radial-gradient(
+    ellipse 78% 70% at 50% 34%,
+    #000 18%,
+    rgba(0, 0, 0, 0.45) 55%,
+    transparent 92%
+  );
+}
+
+/* Subtle warm atmospheric top bloom */
+.VPHero::after {
+  content: '';
+  position: absolute;
+  top: calc(var(--vp-nav-height, 64px) * -1);
+  left: 0;
+  right: 0;
+  height: 460px;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 58% 60% at 50% 0%,
+    rgba(255, 94, 58, 0.1) 0%,
+    rgba(249, 115, 22, 0.045) 45%,
+    transparent 76%
+  );
+}
+
+.dark .VPHero::after {
+  background: radial-gradient(
+    ellipse 62% 62% at 50% 0%,
+    rgba(255, 94, 58, 0.14) 0%,
+    rgba(244, 63, 94, 0.06) 44%,
+    transparent 76%
+  );
+}
+
+.VPHero .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Interactive Hero Release Pill */
+.karta-hero-badge-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+@media (min-width: 960px) {
+  .karta-hero-badge-row {
+    justify-content: flex-start;
+  }
+}
+
+.karta-release-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  padding: 5px 12px 5px 10px;
+  border-radius: 999px;
+  text-decoration: none !important;
+  font-size: 12.5px;
+  line-height: 1.25;
+  color: var(--vp-c-text-2);
+  background: var(--karta-surface);
+  border: 1px solid var(--karta-border-strong);
+  box-shadow:
+    var(--karta-shadow-sm),
+    0 1px 0 rgba(255, 255, 255, 0.72) inset;
+  transition:
+    border-color 0.22s ease,
+    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.24s ease,
+    color 0.22s ease;
+}
+
+.dark .karta-release-pill {
+  background: rgba(22, 22, 29, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.28),
+    0 1px 0 rgba(255, 255, 255, 0.07) inset;
+}
+
+.karta-release-pill:hover {
+  color: var(--vp-c-text-1);
+  border-color: var(--karta-border-hover);
+  transform: translateY(-1px);
+  box-shadow:
+    var(--karta-shadow-sm),
+    0 0 0 1px rgba(249, 115, 22, 0.14),
+    0 10px 24px -12px var(--karta-glow);
+}
+
+@keyframes karta-pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.75;
+  }
+  70% {
+    transform: scale(2.3);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.3);
+    opacity: 0;
+  }
+}
+
+.karta-release-dot {
+  position: relative;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #ff5e3a;
+  box-shadow: 0 0 8px rgba(255, 94, 58, 0.65);
+  flex-shrink: 0;
+}
+
+.karta-release-dot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: rgba(255, 94, 58, 0.65);
+  animation: karta-pulse-ring 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.karta-release-ver {
+  font-family: var(--vp-font-family-mono);
+  font-size: 11.5px;
+  font-weight: 650;
+  color: var(--vp-c-brand-1);
+  letter-spacing: -0.01em;
+}
+
+.karta-release-sep {
+  width: 1px;
+  height: 12px;
+  background: var(--karta-border-strong);
+  flex-shrink: 0;
+}
+
+.karta-release-label {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.karta-release-arrow {
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.karta-release-pill:hover .karta-release-arrow {
+  transform: translateX(2.5px);
+}
+
+.VPHero .name {
+  letter-spacing: -0.03em;
+}
+
+.VPHero .text {
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.VPHero .tagline {
+  max-width: 560px;
+  line-height: 1.65;
+}
+
+.VPHero .image-src {
+  animation: karta-float 6.5s ease-in-out infinite;
+  filter: drop-shadow(0 20px 36px rgba(244, 63, 94, 0.22));
+  will-change: transform;
+}
+
+/* Refined Gradient Brand Button */
+.VPButton.brand {
+  background-image: linear-gradient(125deg, #ff5e3a 0%, #f43f5e 52%, #f97316 100%) !important;
+  background-size: 160% 160%;
+  background-position: 0% 50%;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  box-shadow:
+    0 8px 22px -6px rgba(244, 63, 94, 0.45),
+    0 1px 0 rgba(255, 255, 255, 0.25) inset;
+  transition:
+    transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.25s ease,
+    background-position 0.35s ease;
+}
+
+.VPButton.brand:hover {
+  background-position: 100% 50%;
+  transform: translateY(-1.5px);
+  box-shadow:
+    0 12px 28px -6px rgba(249, 115, 22, 0.55),
+    0 1px 0 rgba(255, 255, 255, 0.32) inset;
+}
+
+.VPButton.brand:active {
+  transform: translateY(0);
+}
+
+.VPButton.alt {
+  background-color: var(--karta-surface) !important;
+  border: 1px solid var(--karta-border-strong) !important;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.VPButton.alt:hover {
+  border-color: var(--karta-border-hover) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px -10px var(--karta-glow);
+}
+
+/* ============================================================================
+ * Glassy Feature Cards (.VPFeature)
+ * ========================================================================== */
+
+.VPFeatures .VPFeature {
+  background: var(--karta-surface);
+  border: 1px solid var(--karta-border);
+  border-radius: 16px;
+  box-shadow: var(--karta-shadow-sm);
+  transition:
+    transform 0.24s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.24s ease,
+    box-shadow 0.24s ease;
+}
+
+.dark .VPFeatures .VPFeature {
+  background: linear-gradient(180deg, rgba(24, 24, 30, 0.88) 0%, rgba(18, 18, 22, 0.94) 100%);
+  backdrop-filter: blur(10px);
+}
+
+.VPFeatures .VPFeature:hover {
+  transform: translateY(-3px);
+  border-color: var(--karta-border-hover);
+  box-shadow:
+    var(--karta-shadow-md),
+    0 0 0 1px rgba(249, 115, 22, 0.12),
+    0 14px 34px -16px var(--karta-glow);
+}
+
+.VPFeature .icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  font-size: 24px;
+  background: var(--karta-gradient-subtle);
+  border: 1px solid var(--karta-border);
+}
+
+.VPFeature .title {
+  font-weight: 650;
+  letter-spacing: -0.015em;
+}
+
+.VPFeature .link-text {
+  color: var(--vp-c-brand-1);
+  font-weight: 550;
+}
+
+/* ============================================================================
+ * Landing Page Section Wrappers (used by Layout.vue)
+ * ========================================================================== */
+
+.karta-home-section {
+  width: 100%;
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.karta-hero-after-wrap {
+  margin-top: 8px;
+  margin-bottom: 48px;
+}
+
+.karta-features-after-wrap {
+  margin-top: 0;
+  margin-bottom: 56px;
+}
+
+.karta-home-band {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  padding-top: 52px;
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+.karta-band-block {
+  position: relative;
+}
+
+.karta-band-block + .karta-band-block::before {
+  content: '';
+  position: absolute;
+  top: -28px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--vp-c-divider) 16%,
+    var(--vp-c-divider) 84%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+@media (min-width: 640px) {
+  .karta-home-section {
+    padding: 0 48px;
+  }
+}
+
+@media (min-width: 960px) {
+  .karta-home-section {
+    padding: 0 64px;
+  }
+  .karta-hero-after-wrap {
+    margin-top: 12px;
+    margin-bottom: 64px;
+  }
+  .karta-features-after-wrap {
+    margin-bottom: 84px;
+  }
+  .karta-home-band {
+    gap: 72px;
+    padding-top: 64px;
+  }
+  .karta-band-block + .karta-band-block::before {
+    top: -36px;
+  }
+}
+
+/* ============================================================================
+ * Doc Content Polish: Rounded Tables, Callouts, Code & Tabular Numbers
+ * ========================================================================== */
+
+.vp-doc table {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--karta-border);
+  border-radius: 12px;
+  background: var(--karta-surface);
+  box-shadow: var(--karta-shadow-sm);
+}
+
+.vp-doc thead tr {
+  background: var(--karta-surface-soft);
+}
+
+.vp-doc th,
+.vp-doc td {
+  border: none;
+  border-bottom: 1px solid var(--vp-c-divider);
+  padding: 11px 14px;
+  overflow-wrap: break-word;
+}
+
+.vp-doc td code,
+.vp-doc th code {
+  display: inline-block;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: break-word;
+  vertical-align: baseline;
+}
+
+.vp-doc td:first-child code {
+  white-space: nowrap;
+}
+
+.vp-doc th + th,
+.vp-doc td + td {
+  border-left: 1px solid var(--vp-c-divider);
+}
+
+.vp-doc tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.vp-doc tbody tr:nth-child(2n) {
+  background: transparent;
+}
+
+.vp-doc tbody tr:hover {
+  background: var(--karta-surface-soft);
+}
+
+.vp-doc .custom-block {
+  border-radius: 12px;
+  border-width: 1px;
+  padding: 16px 18px;
+}
+
+.vp-doc .custom-block.tip {
+  border-color: rgba(249, 115, 22, 0.28);
+  background-color: var(--vp-c-brand-soft);
+}
+
+.vp-doc div[class*='language-'] {
+  border-radius: 12px;
+  border: 1px solid var(--karta-border);
+}
+
+.karta-tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Focus visibility for interactive Karta components */
+.karta-focusable:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 2px;
+}
+
+/* ============================================================================
+ * Reduced Motion
+ * ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .VPHero .image-src,
+  .karta-release-dot::after {
+    animation: none !important;
+  }
+  .VPButton.brand,
+  .VPButton.alt,
+  .VPFeatures .VPFeature,
+  .VPNavBarTitle .logo,
+  .karta-release-pill,
+  .karta-release-arrow {
+    transition: none !important;
+  }
+  .VPFeatures .VPFeature:hover,
+  .VPButton.brand:hover,
+  .VPButton.alt:hover,
+  .karta-release-pill:hover,
+  .karta-release-pill:hover .karta-release-arrow {
+    transform: none !important;
+  }
+}

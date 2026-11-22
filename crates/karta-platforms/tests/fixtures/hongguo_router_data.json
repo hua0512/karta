@@ -1,0 +1,32 @@
+{
+  "loaderData": {
+    "detail_page": {
+      "seriesDetail": {
+        "series_id": "7546798920437877785",
+        "series_name": "测试短剧",
+        "series_intro": "这是一个测试简介",
+        "series_cover": "https://example.com/cover.jpg",
+        "vid_list": ["1234567890", "1234567891"],
+        "episode_cnt": 80,
+        "accessible_episode_cnt": 12,
+        "tags": ["都市", "逆袭"],
+        "celebrities": []
+      },
+      "req": { "webID": "w", "uuid": "u" }
+    },
+    "player_(series_id)/(vid)/page": {
+      "req": { "webID": "w", "uuid": "u" },
+      "isSuccess": true,
+      "series_id": "7546798920437877785",
+      "vid": "1234567890",
+      "video_player_info": {
+        "duration": 120.5,
+        "height": 1280,
+        "width": 720,
+        "poster_url": "https://example.com/poster.jpg",
+        "main_url": "https://cdn.example.com/v.mp4?dy_q=1700000000",
+        "backup_url": "https://cdn2.example.com/v.mp4"
+      }
+    }
+  }
+}

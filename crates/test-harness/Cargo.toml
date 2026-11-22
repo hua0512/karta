@@ -1,0 +1,34 @@
+[package]
+name = "test-harness"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish = false
+description = "Shared end-to-end test harness for the workspace's integration tests"
+
+[features]
+default = []
+# Real platform parsers in `TempApp`.
+platforms = ["dep:karta-platforms"]
+# In-process fake OneBot driver for kovi bots.
+kovi = ["dep:kovi", "dep:kovi-onebot", "dep:futures"]
+
+[dependencies]
+karta-core.workspace = true
+karta-platforms = { workspace = true, optional = true }
+kovi = { workspace = true, optional = true }
+kovi-onebot = { workspace = true, optional = true }
+futures = { workspace = true, optional = true }
+wreq.workspace = true
+# Same TLS stack wreq already links, used for the fake upstream's server side.
+btls.workspace = true
+tokio-btls = "0.5.6"
+httparse = "1.10"
+flate2 = "1"
+tokio = { workspace = true, features = ["net", "io-util", "rt", "macros", "sync", "time"] }
+async-trait.workspace = true
+serde_json.workspace = true
+tempfile.workspace = true
+
+[lints]
+workspace = true

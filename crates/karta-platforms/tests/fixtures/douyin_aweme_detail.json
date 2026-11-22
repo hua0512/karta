@@ -1,0 +1,41 @@
+{
+  "aweme_detail": {
+    "aweme_type": 4,
+    "desc": "测试视频描述 #抖音",
+    "create_time": 1704067200,
+    "author": {
+      "nickname": "测试作者",
+      "avatar_thumb": {
+        "url_list": [
+          "https://p3-pc.douyinpic.com/aweme/test_avatar.jpeg"
+        ]
+      }
+    },
+    "video": {
+      "play_addr": {
+        "uri": "v0200fg10000test1234567890abcdef",
+        "url_list": [
+          "https://v3-web.douyinvod.com/test_video.mp4"
+        ]
+      },
+      "cover": {
+        "url_list": [
+          "https://p3-pc-sign.douyinpic.com/test_cover.jpeg"
+        ]
+      },
+      "duration": 30000
+    },
+    "images": null,
+    "music": {
+      "title": "测试BGM",
+      "author": "BGM作者",
+      "play_url": {
+        "uri": "https://sf3-cdn-tos.douyinstatic.com/obj/ies-music/test_bgm.mp3",
+        "url_list": [
+          "https://sf3-cdn-tos.douyinstatic.com/obj/ies-music/test_bgm.mp3"
+        ]
+      },
+      "matched_pgc_sound": null
+    }
+  }
+}

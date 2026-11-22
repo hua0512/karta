@@ -1,0 +1,65 @@
+{
+  "status_code": 0,
+  "aweme_detail": {
+    "aweme_id": "7684141979752212594",
+    "aweme_type": 0,
+    "media_type": 43,
+    "desc": "当了三年朋友，她突然不干了",
+    "create_time": 1789103723,
+    "share_url": "https://www.iesdouyin.com/share/video/7684141979752212594/?region=CN&from_ssr=1&titleType=title",
+    "author": {
+      "uid": "867969968655273",
+      "sec_uid": "MS4wLjABAAAA0J2bIgvXzAQl6DeJP7wQOBZf0poTXahEOTzSnvIMAlk",
+      "nickname": "小岛失眠中",
+      "signature": "还好你来了.",
+      "avatar_thumb": {
+        "height": 720,
+        "uri": "100x100/aweme-avatar/tos-cn-avt-0015_8506c9fd7e124671a54fc0bfb516dbf8",
+        "url_list": [
+          "https://p3-pc.douyinpic.com/aweme/100x100/aweme-avatar/tos-cn-avt-0015_8506c9fd7e124671a54fc0bfb516dbf8.jpeg?from=327834062"
+        ],
+        "width": 720
+      }
+    },
+    "video": {
+      "duration": 0,
+      "play_addr": {
+        "uri": "tos-cn-ve-2774/ooNBukICe2RDLh4ygDiZ9afPt2AF7YEpgQuY45",
+        "url_list": []
+      },
+      "cover": {
+        "height": 720,
+        "uri": "tos-cn-i-0813/okgDAKfDCEuK9fqAmjAvCo94jCmAsE5AFAAoIg",
+        "url_list": [
+          "https://p3-pc-sign.douyinpic.com/tos-cn-i-0813/okgDAKfDCEuK9fqAmjAvCo94jCmAsE5AFAAoIg~noop.jpeg"
+        ],
+        "width": 720
+      },
+      "cover_original_scale": null
+    },
+    "images": null,
+    "music": null,
+    "statistics": {
+      "admire_count": 0,
+      "aweme_id": "7684141979752212594",
+      "collect_count": 3674,
+      "comment_count": 2598,
+      "digg_count": 33763,
+      "play_count": 0,
+      "recommend_count": 2224,
+      "share_count": 8932
+    },
+    "article_info": {
+      "article_content": "{\"long_article_abstract\": \"她喝醉后跟我表白，我说了句“好啊”。\\n结果第二天，我以为这事翻篇了，她却在等我这个男朋友找她。\\n我俩当了三年朋友，她平时没少拿我开玩笑。所以那晚她拉着我的袖子，问我要不要跟她在一起，我心跳快得不行，嘴上却还装得很随意。\\n“好啊，你明天别反悔…\", \"markdown\": \"她喝醉后跟我表白，我说了句“好啊”。\\n\\n结果第二天，我以为这事翻篇了，她却在等我这个男朋友找她。\\n\\n我俩当了三年朋友，她平时没少拿我开玩笑。所以那晚她拉着我的袖子，问我要不要跟她在一起，我心跳快得不行，嘴上却还装得很随意。\\n\\n“好啊，你明天别反悔。”\\n\\n第二天，我没敢提，她也没提。\\n\\n我照常给她发搞笑视频，她一直没回。\\n\\n直到下午，她突然问：\\n\\n“你昨晚答应我的，还算不算数？”\\n\\n……\\n\\n最后她回：\\n\\n<br/>\\n\\n<br/>\\n\\n“明天你还这么叫我就行。”\\n\\n<br/>\\n\\n<br/>\\n\\n<br/>\\n\\n<br/>\\n\\n<br/>\\n\\n<br/>\\n\\n<br/>\\n\\n<br/>\\n\\n#双向暗恋\\n\\n<br/>\"}",
+      "article_id": "7684141979752212594",
+      "article_title": "当了三年朋友，她突然不干了",
+      "article_type": 999,
+      "container_lynx_url": "aweme://lynxview/?channel=morphling_high&bundle=douyin_article_detail%2Ffeed%2Ftemplate.js",
+      "detail_lynx_url": "aweme://lynxview/?channel=morphling_high&bundle=douyin_article_detail%2Findex%2Ftemplate.js",
+      "fe_data": "{\"aigc_post_source\": \"\", \"article_id\": 7684141979752212594, \"article_num\": 1819, \"author_type\": \"\", \"background_color\": \"#000000\", \"background_extracted\": \"#000000\", \"clip_image_length\": 0, \"description\": \"\", \"have_thinking\": false, \"head_poster_list\": {\"uri\": \"tos-cn-i-pv474xass6/321159ad2c974243868d5416df0f7e49\", \"url_list\": [\"https://p26-sign.douyinpic.com/tos-cn-i-pv474xass6/321159ad2c974243868d5416df0f7e49~tplv-pv474xass6-header_clip:1080:1440.jpeg\"]}, \"image_length\": 0, \"image_list\": [], \"is_ai_search\": false, \"is_rich_media\": false, \"long_article_markdown_slots\": null, \"long_article_need_desc\": \"1\", \"long_article_version\": \"1\", \"pre_cover\": \"https://p26-sign.douyinpic.com/tos-cn-i-pv474xass6/321159ad2c974243868d5416df0f7e49~tplv-pv474xass6-header_clip:1080:1440.jpeg\", \"read_time\": 3, \"read_time_second\": 219, \"reference_list\": null, \"thinking_collapsed\": false, \"title_num\": 39}",
+      "has_more": false,
+      "is_cartoon": 1,
+      "read_time": 3
+    }
+  }
+}

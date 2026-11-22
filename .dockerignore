@@ -1,0 +1,14 @@
+target/
+.git/
+.github/
+artifacts/
+.claude/
+docs/
+node_modules/
+data/
+package.json
+pnpm-lock.yaml
+package-lock.json
+.env*
+*.md
+!config.example.json

@@ -1,0 +1,129 @@
+name: CI
+
+on:
+  push:
+    branches: [main, dev]
+    paths-ignore:
+      - "docs/**"
+      - "*.md"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
+      - ".github/workflows/docs.yml"
+  pull_request:
+    branches: [main, dev]
+    paths-ignore:
+      - "docs/**"
+      - "*.md"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
+      - ".github/workflows/docs.yml"
+
+permissions:
+  contents: read
+
+# A newer push to the same branch or PR supersedes the running checks.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CARGO_TERM_COLOR: always
+  RUSTFLAGS: -Dwarnings
+
+jobs:
+  fmt:
+    name: Format
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt
+      - run: cargo fmt --all -- --check
+
+  audit:
+    name: Security audit
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: taiki-e/install-action@cargo-audit
+      - run: cargo audit
+
+  clippy:
+    name: Clippy
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy
+      - uses: ./.github/actions/setup-build-deps
+      - uses: Swatinem/rust-cache@v2
+        with:
+          save-if: ${{ github.event_name == 'push' }}
+      - name: Clippy (default features)
+        run: cargo clippy --locked --workspace --all-targets -- -D warnings
+      - name: Clippy (all features)
+        run: cargo clippy --locked --workspace --all-features --all-targets -- -D warnings
+
+  test:
+    name: Test
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      CARGO_PROFILE_TEST_DEBUG: "0"
+      RUSTFLAGS: -Dwarnings -C link-arg=-fuse-ld=mold
+    steps:
+      - uses: actions/checkout@v6
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: ./.github/actions/setup-build-deps
+        with:
+          ffmpeg: "true"
+      - uses: Swatinem/rust-cache@v2
+        with:
+          save-if: ${{ github.event_name == 'push' }}
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: nextest,mold
+      # Run the full suite once with all features (including ytdlp); clippy
+      # verifies default-feature compilation and fallback tests exercise
+      # non-ytdlp paths via a missing ytdlp_path.
+      - name: Test (workspace)
+        run: cargo nextest run --locked --workspace --all-features
+      # Reuse the compiled test binary for ignored real-ffmpeg tests.
+      - name: Test (external tools)
+        env:
+          KARTA_REQUIRE_TOOLS: "1"
+        run: >-
+          cargo nextest run --locked --workspace --all-features
+          --run-ignored only -E 'test(/^real_/)'
+
+  build:
+    name: Build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    # PRs already get clippy and tests, so only pushed branches build release.
+    if: github.event_name == 'push'
+    env:
+      # Exercise optimized builds without the production LTO/linking cost.
+      # Tagged releases still use the settings in Cargo.toml.
+      CARGO_PROFILE_RELEASE_LTO: "false"
+      CARGO_PROFILE_RELEASE_CODEGEN_UNITS: "16"
+      RUSTFLAGS: -Dwarnings -C link-arg=-fuse-ld=mold
+    steps:
+      - uses: actions/checkout@v6
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: ./.github/actions/setup-build-deps
+      - uses: Swatinem/rust-cache@v2
+        with:
+          save-if: ${{ github.event_name == 'push' }}
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: mold
+      - name: Build release binaries
+        run: cargo build --locked --release -p karta --features ytdlp

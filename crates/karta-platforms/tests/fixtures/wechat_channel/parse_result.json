@@ -1,0 +1,12 @@
+{
+  "code": 0,
+  "msg": "success",
+  "data": {
+    "wx_export_id": "export_raw_id",
+    "playable_url": "https://channels.weixin.qq.com/web/pages/feed?token=G%2BT%2F1%3D&eid=export%3Did&entry_scene=0",
+    "cover_url": "https://yuanbao.example/cover_fallback.jpg",
+    "author": "元宝作者",
+    "author_icon": "https://yuanbao.example/avatar_fallback.jpg",
+    "desc": "元宝描述"
+  }
+}

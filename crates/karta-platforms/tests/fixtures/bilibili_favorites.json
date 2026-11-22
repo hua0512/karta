@@ -1,0 +1,34 @@
+{
+  "code": 0,
+  "message": "0",
+  "data": {
+    "info": {
+      "title": "测试收藏夹",
+      "cover": "https://i0.hdslb.com/bfs/archive/fav_cover.jpg",
+      "upper": {
+        "mid": 396886341,
+        "name": "测试收藏者",
+        "face": "https://i1.hdslb.com/bfs/face/fav_owner.jpg"
+      },
+      "ctime": 1704067200,
+      "media_count": 2,
+      "intro": "收藏夹简介"
+    },
+    "medias": [
+      {
+        "title": "收藏视频一",
+        "cover": "https://i0.hdslb.com/bfs/archive/fav_1.jpg",
+        "intro": "简介一",
+        "bvid": "BV1xx411c7mD",
+        "id": 170001
+      },
+      {
+        "title": "收藏视频二",
+        "cover": "https://i0.hdslb.com/bfs/archive/fav_2.jpg",
+        "intro": "简介二",
+        "bvid": null,
+        "id": 170002
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Karta">
+  <defs>
+    <linearGradient id="card-back" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff6b4a"/>
+      <stop offset="100%" stop-color="#e11d48"/>
+    </linearGradient>
+    <linearGradient id="card-mid" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+    <linearGradient id="card-front" x1="0" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#27272a"/>
+      <stop offset="50%" stop-color="#18181b"/>
+      <stop offset="100%" stop-color="#09090b"/>
+    </linearGradient>
+    <linearGradient id="card-rim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.45"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#fb923c" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="50%" stop-color="#fb7185"/>
+      <stop offset="100%" stop-color="#f43f5e"/>
+    </linearGradient>
+    <filter id="card-shadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#000000" flood-opacity="0.38"/>
+    </filter>
+  </defs>
+
+  <!-- back card (coral-rose) -->
+  <rect x="112" y="76" width="260" height="340" rx="44" transform="rotate(-17 242 260)" fill="url(#card-back)" filter="url(#card-shadow)"/>
+
+  <!-- middle card (amber-orange) -->
+  <rect x="132" y="74" width="260" height="340" rx="44" transform="rotate(-7 262 256)" fill="url(#card-mid)" filter="url(#card-shadow)"/>
+
+  <!-- front obsidian card -->
+  <g transform="rotate(5 278 262)" filter="url(#card-shadow)">
+    <rect x="148" y="82" width="264" height="348" rx="46" fill="url(#card-front)"/>
+    <rect x="150" y="84" width="260" height="344" rx="44" fill="none" stroke="url(#card-rim)" stroke-width="4"/>
+
+    <!-- media preview block -->
+    <rect x="184" y="122" width="192" height="148" rx="26" fill="url(#accent)" fill-opacity="0.16" stroke="url(#accent)" stroke-opacity="0.45" stroke-width="3"/>
+    <path d="M280 154 C284 182 294 192 322 196 C294 200 284 210 280 238 C276 210 266 200 238 196 C266 192 276 182 280 154 Z" fill="url(#accent)"/>
+
+    <!-- card metadata bars -->
+    <rect x="184" y="302" width="156" height="24" rx="12" fill="#fafafa" fill-opacity="0.92"/>
+    <rect x="184" y="344" width="98" height="20" rx="10" fill="#a1a1aa" fill-opacity="0.45"/>
+    <circle cx="358" cy="354" r="14" fill="url(#accent)"/>
+  </g>
+</svg>

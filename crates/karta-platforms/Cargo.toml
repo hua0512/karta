@@ -1,0 +1,42 @@
+[package]
+name = "karta-platforms"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Platform-specific parsers for karta-core"
+
+[features]
+default = []
+ytdlp = ["karta-core/ytdlp"]
+
+[dependencies]
+karta-core.workspace = true
+async-trait.workspace = true
+futures.workspace = true
+wreq = { workspace = true, features = ["json", "cookies", "query", "form"] }
+wreq-util.workspace = true
+btls.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+regex.workspace = true
+scraper.workspace = true
+encoding_rs.workspace = true
+chrono.workspace = true
+tracing.workspace = true
+uuid.workspace = true
+rand.workspace = true
+md5.workspace = true
+sha2.workspace = true
+tokio = { workspace = true, features = ["sync", "time", "fs"] }
+parking_lot.workspace = true
+base64.workspace = true
+url.workspace = true
+aes = "0.9.3"
+
+[dev-dependencies]
+tokio-test.workspace = true
+tempfile.workspace = true
+test-harness = { workspace = true, features = ["platforms"] }
+
+[lints]
+workspace = true

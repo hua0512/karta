@@ -1,0 +1,31 @@
+{
+  "bili_cookie": "SESSDATA=legacy",
+  "proxy": null,
+  "max_size": 50,
+  "duration_maximum": 600,
+  "render_type": "image",
+  "disabled_platforms": ["weibo"],
+  "cache_size": 32,
+  "download_media": false,
+  "download_concurrency": 2,
+  "bili_video_quality": "1080p60",
+  "bili_video_codecs": ["hevc", "av1"],
+  "emoji_style": "google",
+  "emoji_enabled": true,
+  "append_url": true,
+  "need_upload": false,
+  "access_control": {
+    "enabled": true,
+    "mode": "whitelist",
+    "users": [10001],
+    "groups": [20002]
+  },
+  "forward_contents": false,
+  "reaction_enabled": true,
+  "parse_timeout": 30,
+  "forward_text_threshold": 300,
+  "forward_media_threshold": 4,
+  "banned_users": [123],
+  "disabled_groups": [456],
+  "group_disabled_platforms": { "789": ["bilibili"] }
+}

@@ -1,0 +1,19 @@
+{
+  "pageTitle": "【测试】快手测试视频标题",
+  "photoData": {
+    "photo": {
+      "caption": "快手测试视频标题",
+      "timestamp": 1704067200000,
+      "headUrl": "https://tx2.a.yximgs.com/test_avatar.jpg",
+      "userName": "快手测试用户",
+      "mainMvUrls": [
+        {
+          "url": "https://txmov2.a.yximgs.com/test_video.mp4"
+        }
+      ],
+      "coverUrl": "https://p3.a.yximgs.com/test_cover.jpg",
+      "duration": 15000,
+      "ext_params": null
+    }
+  }
+}

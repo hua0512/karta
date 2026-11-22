@@ -1,0 +1,82 @@
+[workspace]
+members = ["crates/karta-core", "crates/karta-platforms", "crates/karta-kovi", "crates/karta", "crates/test-harness"]
+resolver = "3"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MPL-2.0"
+
+[workspace.dependencies]
+# Internal crates
+karta-core = { path = "crates/karta-core" }
+karta-platforms = { path = "crates/karta-platforms" }
+karta-kovi = { path = "crates/karta-kovi" }
+test-harness = { path = "crates/test-harness" }
+
+# Async runtime
+tokio = { version = "1" }
+async-trait = "0.1"
+futures = "0.3"
+
+# HTTP client (wreq: fork of reqwest with BoringSSL TLS fingerprint impersonation)
+wreq = { version = "=0.16.1", default-features = false, features = ["tokio-rt", "webpki-roots"] }
+wreq-util = "=0.2.0"
+# BoringSSL bindings wreq already links. Must stay on the version wreq uses:
+# a second BoringSSL build fails on the `links` conflict.
+btls = "0.5.6"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Pattern matching
+regex = "1"
+
+# Image processing
+# Keep raster formats used by cards; omit AVIF encoding and OpenEXR, whose
+# transitive dependencies still require the unmaintained paste crate.
+# Rayon is unused by our drawing paths and keeps those codecs in Cargo.lock.
+image = { version = "0.25", default-features = false, features = ["bmp", "dds", "ff", "gif", "hdr", "ico", "jpeg", "png", "pnm", "qoi", "tga", "tiff", "webp"] }
+imageproc = { version = "0.27", default-features = false }
+swash = "0.2.10"
+
+# Emoji support
+emojis = "0.9"
+
+# HTML parsing
+scraper = "0.29"
+encoding_rs = "0.8"
+
+# Utilities
+chrono = "0.4"
+thiserror = "2"
+md5 = "0.8"
+sha2 = "0.11"
+tracing = { version = "0.1", features = ["log"] }
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+parking_lot = "0.13"
+base64 = "0.23"
+qrcode = "0.14"
+smallvec = "1"
+uuid = { version = "1", features = ["v4"] }
+rand = "0.10"
+url = "2.5.8"
+
+# Kovi bot framework
+kovi = "0.13"
+kovi-onebot = "0.13.1"
+
+# Dev dependencies
+tokio-test = "0.4"
+tempfile = "3"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"
+
+[workspace.lints.clippy]
+mod_module_files = "warn"
